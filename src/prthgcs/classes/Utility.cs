@@ -5,7 +5,13 @@ namespace prthgcs
     /// </summary>
     public class CUtility
     {
-        private string m_alphanumeric = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private string m_alphanumeric;
+
+
+        public CUtility()
+        {
+            this.m_alphanumeric = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        }
 
 
         /// <summary>
