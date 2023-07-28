@@ -5,7 +5,7 @@
         <RootNamespace>prthgcs</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <FileVersion>0.0.1.20230727</FileVersion>
+        <FileVersion>0.0.1.20230728</FileVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
