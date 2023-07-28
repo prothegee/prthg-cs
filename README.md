@@ -10,6 +10,7 @@ prthg-cs dotnet library
     - internal/dev as submodule
 
 - dependencies:
+    - [cryptopp](https://github.com/weidai11/cryptopp)
     - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json)
 
 <br>
