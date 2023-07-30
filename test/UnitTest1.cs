@@ -3,17 +3,17 @@ namespace prthgcs.test;
 
 public class UnitTest1
 {
-    private readonly bool m_run10 = false;
-    private readonly bool m_run100 = false;
+    private const bool m_run10 = false;
+    private const bool m_run100 = false;
 
-    private readonly string m_email = "foo@bar.baz";
+    private const string m_email = "foo@bar.baz";
 
-    private readonly string m_password = "password123!";
-    private readonly string m_passwordSalt = "superSALT321!";
+    private const string m_password = "password123!";
+    private const string m_passwordSalt = "superSALT321!";
 
-    private readonly string m_message = "secret message #1 !";
-    private readonly string m_initializeKeyStr = "abcdefghijklmnopqrstuvwxyz123456";
-    private readonly string m_initializeVectorStr = "abcdefghijklmnopqrstuvwx";
+    private const string m_message = "secret message #1 !";
+    private const string m_initializeKeyStr = "abcdefghijklmnopqrstuvwxyz123456";
+    private const string m_initializeVectorStr = "abcdefghijklmnopqrstuvwx";
 
 
     private void RunTestUtilityClass()
@@ -148,7 +148,9 @@ public class UnitTest1
     {
         if (m_run10)
         {
+            #pragma warning disable CS0162
             Console.WriteLine("Test CCryptography 10 Times: Started");
+            #pragma warning restore CS0162
 
             for (int i = 0; i < 10; i++)
             {
@@ -168,7 +170,9 @@ public class UnitTest1
     {
         if (m_run100)
         {
+            #pragma warning disable CS0162
             Console.WriteLine("Test CCryptography 100 Times: Started");
+            #pragma warning restore CS0162
 
             for (int i = 0; i < 100; i++)
             {
