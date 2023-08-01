@@ -272,6 +272,22 @@ namespace prthgcs
         [DllImport("cppport.dll", EntryPoint = "EncryptRC6", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr EncryptRC6_CPPPORT(string input, long initializeKey, long initializeVector);
 
+        /// <summary>
+        /// encrypt encrypt input using CBC R6 stream cipher
+        /// <code>
+        /// STATUS: OK
+        /// </code>
+        /// <code>
+        /// initializeKey length must 16 byte and can't start from 0 e.g. 1234567891234567
+        /// </code>
+        /// <code>
+        /// initializeVector length must 16 byte and can't start from 0 e.g. 9876543219876543
+        /// </code>
+        /// <param name="input"></param>
+        /// <param name="initializeKey"></param>
+        /// <param name="initializeVector"></param>
+        /// <returns></returns>
+        /// </summary>
         public string EncryptRC6(string input, long initializeKey, long initializeVector)
         {
             var pInput = EncryptRC6_CPPPORT(input, initializeKey, initializeVector);
@@ -283,6 +299,22 @@ namespace prthgcs
         [DllImport("cppport.dll", EntryPoint = "DecryptRC6", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr DecryptRC6_CPPPORT(string input, long initializeKey, long initializeVector);
 
+        /// <summary>
+        /// encrypt decrypt input using CBC R6 stream cipher
+        /// <code>
+        /// STATUS: OK
+        /// </code>
+        /// <code>
+        /// initializeKey length must 16 byte and can't start from 0 e.g. 1234567891234567
+        /// </code>
+        /// <code>
+        /// initializeVector length must 16 byte and can't start from 0 e.g. 9876543219876543
+        /// </code>
+        /// <param name="input"></param>
+        /// <param name="initializeKey"></param>
+        /// <param name="initializeVector"></param>
+        /// <returns></returns>
+        /// </summary>
         public string DecryptRC6(string input, long initializeKey, long initializeVector)
         {
             var pInput = DecryptRC6_CPPPORT(input, initializeKey, initializeVector);
