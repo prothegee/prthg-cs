@@ -13,8 +13,6 @@ prthg-cs dotnet library
     - __required:__
         - [cryptopp](https://github.com/weidai11/cryptopp)
 
-        - [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json)
-
     - __optional:__
         - [vcpkg](https://github.com/Microsoft/vcpkg)
 
