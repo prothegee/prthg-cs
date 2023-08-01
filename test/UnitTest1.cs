@@ -3,17 +3,20 @@ namespace prthgcs.test;
 
 public class UnitTest1
 {
-    private readonly bool m_run10 = false;
-    private readonly bool m_run100 = false;
+    private const string m_email = "foo@bar.baz";
 
-    private readonly string m_email = "foo@bar.baz";
+    private const string m_password = "password123!";
+    private const string m_passwordSalt = "superSALT321!";
 
-    private readonly string m_password = "password123!";
-    private readonly string m_passwordSalt = "superSALT321!";
+    private const string m_message = "secret message #1 !";
 
-    private readonly string m_message = "secret message #1 !";
-    private readonly string m_initializeKeyStr = "abcdefghijklmnopqrstuvwxyz123456";
-    private readonly string m_initializeVectorStr = "abcdefghijklmnopqrstuvwx";
+    private const string m_iKeyXChaCha20 = "abcdefghijklmnopqrstuvwxyz123456";
+    private const string m_iVecXChaCha20 = "abcdefghijklmnopqrstuvwx";
+
+    // reserved AES
+
+    const long m_iKeyRC6 = 1234567891234567;
+    const long m_iVecRC6 = 9876543219876543;
 
 
     private void RunTestUtilityClass()
@@ -111,15 +114,23 @@ public class UnitTest1
         }
 
 
-        string EncryptXChaCha20 = crypt.EncryptXChaCha20(m_message, m_initializeKeyStr, m_initializeVectorStr);
-        string DecryptXChaCha20 = crypt.DecryptXChaCha20(EncryptXChaCha20, m_initializeKeyStr, m_initializeVectorStr);
+        string EncryptXChaCha20 = crypt.EncryptXChaCha20(m_message, m_iKeyXChaCha20, m_iVecXChaCha20);
+        string DecryptXChaCha20 = crypt.DecryptXChaCha20(EncryptXChaCha20, m_iKeyXChaCha20, m_iVecXChaCha20);
         if (m_message != DecryptXChaCha20)
         {
             throw new ArgumentException("XChaCha20 message & decrypt failed");
         }
 
 
-        // reserved: CBC AES error on decrypt; reason: unknown
+        // reserved: AES error on decrypt; reason: unknown
+
+
+        string EncryptRC6 = crypt.EncryptRC6(m_message, m_iKeyRC6, m_iVecRC6);
+        string DecryptRC6 = crypt.DecryptRC6(EncryptRC6, m_iKeyRC6, m_iVecRC6);
+        if (m_message != DecryptRC6)
+        {
+            throw new ArgumentException("RC6 message & decrypt failed");
+        }
     }
 
 
@@ -141,45 +152,5 @@ public class UnitTest1
         this.RunTestCryptographyClass();
 
         Console.WriteLine("Test CCryptography: Finished");
-    }
-
-    [Fact]
-    public void TestCryptography10()
-    {
-        if (m_run10)
-        {
-            Console.WriteLine("Test CCryptography 10 Times: Started");
-
-            for (int i = 0; i < 10; i++)
-            {
-                this.RunTestCryptographyClass();
-            }
-
-            Console.WriteLine("Test CCryptography 10 Times: Finished");
-        }
-        else
-        {
-            Console.WriteLine("Test CCryptography 10 Times: Skipped, you need to set it manually");
-        }
-    }
-
-    [Fact]
-    public void TestCryptography100()
-    {
-        if (m_run100)
-        {
-            Console.WriteLine("Test CCryptography 100 Times: Started");
-
-            for (int i = 0; i < 100; i++)
-            {
-                this.RunTestCryptographyClass();
-            }
-
-            Console.WriteLine("Test CCryptography 100 Times: Finished");
-        }
-        else
-        {
-            Console.WriteLine("Test CCryptography 100 Times: Skipped, you need to set it manually");
-        }
     }
 }

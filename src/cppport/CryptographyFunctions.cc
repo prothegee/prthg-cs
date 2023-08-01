@@ -271,7 +271,7 @@ CPPPORT_EXPORT const char *DecryptXChaCha20(const char *input, const char *initi
     return fResult;
 }
 
-CPPPORT_EXPORT const char *EncryptCBCAES(const char *input, int initializeKey, int initializeVector)
+CPPPORT_EXPORT const char *EncryptAES(const char *input, int initializeKey, int initializeVector)
 {
     std::string tInput(input), tResult;
 
@@ -296,7 +296,7 @@ CPPPORT_EXPORT const char *EncryptCBCAES(const char *input, int initializeKey, i
     return fResult;
 }
 
-CPPPORT_EXPORT const char *DecryptCBCAES(const char *input, int initializeKey, int initializeVector)
+CPPPORT_EXPORT const char *DecryptAES(const char *input, int initializeKey, int initializeVector)
 {
     std::string tInput(input), tResult;
 
@@ -317,6 +317,64 @@ CPPPORT_EXPORT const char *DecryptCBCAES(const char *input, int initializeKey, i
     const char* fResult = new char[length];
 
     strcpy(bResult, tResult.c_str());
+    fResult = bResult;
+
+    return fResult;
+}
+
+CPPPORT_EXPORT const char *EncryptRC6(const char *input, long initializeKey, long initializeVector)
+{
+    std::string tInput(input), tResult, tResultOK;
+
+    CryptoPP::SecByteBlock key(CryptoPP::RC6::DEFAULT_KEYLENGTH);
+    memset(key, (long)initializeKey, CryptoPP::RC6::DEFAULT_KEYLENGTH);
+
+    CryptoPP::byte iv[CryptoPP::RC6::BLOCKSIZE];
+    memset(iv, (long)initializeVector, CryptoPP::RC6::BLOCKSIZE);
+
+    CryptoPP::CBC_Mode<CryptoPP::RC6>::Encryption enc;
+
+    enc.SetKeyWithIV(key, key.size(), iv);
+
+    CryptoPP::StringSource(input, true, new CryptoPP::StreamTransformationFilter(enc, new CryptoPP::StringSink(tResult)));
+
+    CryptoPP::StringSource(tResult, true, new CryptoPP::HexEncoder(new CryptoPP::StringSink(tResultOK)));
+
+    int length = tResultOK.length() + 1;
+
+    char* bResult = new char[length];
+    const char* fResult = new char[length];
+
+    strcpy(bResult, tResultOK.c_str());
+    fResult = bResult;
+
+    return fResult;
+}
+
+CPPPORT_EXPORT const char *DecryptRC6(const char *input, long initializeKey, long initializeVector)
+{
+    std::string tInput(input), tResult, tResultOK;
+
+    CryptoPP::SecByteBlock key(CryptoPP::RC6::DEFAULT_KEYLENGTH);
+    memset(key, (long)initializeKey, CryptoPP::RC6::DEFAULT_KEYLENGTH);
+
+    CryptoPP::byte iv[CryptoPP::RC6::BLOCKSIZE];
+    memset(iv, (long)initializeVector, CryptoPP::RC6::BLOCKSIZE);
+
+    CryptoPP::CBC_Mode<CryptoPP::RC6>::Decryption dec;
+
+    dec.SetKeyWithIV(key, key.size(), iv);
+
+    CryptoPP::StringSource(input, true, new CryptoPP::HexDecoder(new CryptoPP::StringSink(tResult)));
+
+    CryptoPP::StringSource ssrc(tResult, true, new CryptoPP::StreamTransformationFilter(dec, new CryptoPP::StringSink(tResultOK)));
+
+    int length = tResultOK.length() + 1;
+
+    char* bResult = new char[length];
+    const char* fResult = new char[length];
+
+    strcpy(bResult, tResultOK.c_str());
     fResult = bResult;
 
     return fResult;
