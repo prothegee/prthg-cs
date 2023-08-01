@@ -21,6 +21,7 @@
 #include <cryptopp/gcm.h>
 #include <cryptopp/aes.h>
 #include <cryptopp/chacha.h>
+#include <cryptopp/rc6.h>
 
 
 extern "C"
@@ -144,9 +145,9 @@ extern "C"
     CPPPORT_EXPORT const char *DecryptXChaCha20(const char *input, const char *initializeKey, const char *initializeVector);
 
     /**
-     * @brief encrypt input using CBC AES stream cipher
+     * @brief encrypt input using CBC AES Rijndael stream cipher
      * 
-     * @note STATUS: ERROR
+     * @note STATUS: OK
      * 
      * @note initializeKey length must 9 byte and can't start from 0 e.g. 123456789
      * @note initializeVector length must 9 byte and can't start from 0 e.g. 987654321
@@ -156,12 +157,12 @@ extern "C"
      * @param initializeVector 
      * @return CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *EncryptCBCAES(const char *input, int initializeKey, int initializeVector);
+    CPPPORT_EXPORT const char *EncryptAES(const char *input, int initializeKey, int initializeVector);
 
     /**
-     * @brief decrypt input using CBC AES stream cipher
+     * @brief decrypt input using CBC AES Rijndael stream cipher
      * 
-     * @note STATUS: ERROR
+     * @note STATUS: ERROR when decrypt input
      * 
      * @note initializeKey length must 9 byte and can't start from 0 e.g. 123456789
      * @note initializeVector length must 9 byte and can't start from 0 e.g. 987654321
@@ -171,7 +172,11 @@ extern "C"
      * @param initializeVector 
      * @return CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *DecryptCBCAES(const char *input, int initializeKey, int initializeVector);
+    CPPPORT_EXPORT const char *DecryptAES(const char *input, int initializeKey, int initializeVector);
+
+    CPPPORT_EXPORT const char *EncryptRC6(const char *input, long initializeKey, long initializeVector);
+
+    CPPPORT_EXPORT const char *DecryptRC6(const char *input, long initializeKey, long initializeVector);
 }
 
 

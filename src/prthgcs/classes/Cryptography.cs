@@ -215,13 +215,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "EncryptCBCAES", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        private static extern IntPtr EncryptCBCAES_CPPPORT(string input, int initializeKey, int initializeVector);
+        [DllImport("cppport.dll", EntryPoint = "EncryptAES", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        private static extern IntPtr EncryptAES_CPPPORT(string input, int initializeKey, int initializeVector);
 
         /// <summary>
-        /// encrypt input using CBC AES stream cipher
+        /// encrypt input using CBC AES Rijndael stream cipher
         /// <code>
-        /// STATUS: ERROR
+        /// STATUS: OK
         /// </code>
         /// <code>
         /// initializeKey length must 9 byte and can't start from 0 e.g. 123456789
@@ -234,21 +234,21 @@ namespace prthgcs
         /// <param name="initializeVector"></param>
         /// <returns></returns>
         /// </summary>
-        public string EncryptCBCAES(string input, int initializeKey, int initializeVector)
+        public string EncryptAES(string input, int initializeKey, int initializeVector)
         {
-            var pInput = EncryptCBCAES_CPPPORT(input, initializeKey, initializeVector);
+            var pInput = EncryptAES_CPPPORT(input, initializeKey, initializeVector);
             var pInputMarshal = Marshal.PtrToStringAnsi(pInput);
 
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "DecryptCBCAES", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        private static extern IntPtr DecryptCBCAES_CPPPORT(string input, int initializeKey, int initializeVector);
+        [DllImport("cppport.dll", EntryPoint = "DecryptAES", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        private static extern IntPtr DecryptAES_CPPPORT(string input, int initializeKey, int initializeVector);
 
         /// <summary>
-        /// decrypt input using CBC AES stream cipher
+        /// decrypt input using CBC AES Rijndael stream cipher
         /// <code>
-        /// STATUS: ERROR
+        /// STATUS: ERROR when decrypt input
         /// </code>
         /// <code>
         /// initializeKey length must 9 byte and can't start from 0 e.g. 123456789
@@ -261,9 +261,31 @@ namespace prthgcs
         /// <param name="initializeVector"></param>
         /// <returns></returns>
         /// </summary>
-        public string DecryptCBCAES(string input, int initializeKey, int initializeVector)
+        public string DecryptAES(string input, int initializeKey, int initializeVector)
         {
-            var pInput = DecryptCBCAES_CPPPORT(input, initializeKey, initializeVector);
+            var pInput = DecryptAES_CPPPORT(input, initializeKey, initializeVector);
+            var pInputMarshal = Marshal.PtrToStringAnsi(pInput);
+
+            return pInputMarshal;
+        }
+
+        [DllImport("cppport.dll", EntryPoint = "EncryptRC6", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        private static extern IntPtr EncryptRC6_CPPPORT(string input, long initializeKey, long initializeVector);
+
+        public string EncryptRC6(string input, long initializeKey, long initializeVector)
+        {
+            var pInput = EncryptRC6_CPPPORT(input, initializeKey, initializeVector);
+            var pInputMarshal = Marshal.PtrToStringAnsi(pInput);
+
+            return pInputMarshal;
+        }
+
+        [DllImport("cppport.dll", EntryPoint = "DecryptRC6", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        private static extern IntPtr DecryptRC6_CPPPORT(string input, long initializeKey, long initializeVector);
+
+        public string DecryptRC6(string input, long initializeKey, long initializeVector)
+        {
+            var pInput = DecryptRC6_CPPPORT(input, initializeKey, initializeVector);
             var pInputMarshal = Marshal.PtrToStringAnsi(pInput);
 
             return pInputMarshal;
