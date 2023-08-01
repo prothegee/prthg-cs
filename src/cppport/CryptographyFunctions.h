@@ -174,8 +174,34 @@ extern "C"
      */
     CPPPORT_EXPORT const char *DecryptAES(const char *input, int initializeKey, int initializeVector);
 
+    /**
+     * @brief encrypt input using CBC R6 stream cipher
+     * 
+     * @note STATUS: OK
+     * 
+     * @note initializeKey length must 16 byte and can't start from 0 e.g. 1234567891234567
+     * @note initializeVector length must 16 byte and can't start from 0 e.g. 9876543219876543
+     * 
+     * @param input 
+     * @param initializeKey 
+     * @param initializeVector 
+     * @return std::string 
+     */
     CPPPORT_EXPORT const char *EncryptRC6(const char *input, long initializeKey, long initializeVector);
 
+    /**
+     * @brief decrypt input using CBC R6 stream cipher
+     * 
+     * @note STATUS: OK
+     * 
+     * @note initializeKey length must 16 byte and can't start from 0 e.g. 1234567891234567
+     * @note initializeVector length must 16 byte and can't start from 0 e.g. 9876543219876543
+     * 
+     * @param input 
+     * @param initializeKey 
+     * @param initializeVector 
+     * @return std::string 
+     */
     CPPPORT_EXPORT const char *DecryptRC6(const char *input, long initializeKey, long initializeVector);
 }
 
