@@ -1,23 +1,35 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
         <RootNamespace>prthgcs</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <FileVersion>0.1.1.20230801</FileVersion>
+        <ActualVersion>0.1.0.20230801</ActualVersion>
+        <FileVersion>0.1.0</FileVersion>
+        <Version>0.1.0</Version>
+        <PackageId>prthg.prthgcs</PackageId>
+        <Authors>Prana Ron @prothegee</Authors>
+        <Company>N/A</Company>
+        <PackageTags>utility, sha, blake2b, scrypt, xchacha20, rc6, hash, stream, cipher</PackageTags>
+        <RepositoryUrl>https://github.com/prothegee/prthg-cs</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
-        <NoWarn>7035;8600;8603</NoWarn>
+        <NoWarn>
+            7035;
+            8600;
+            8603;
+        </NoWarn>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'net7.0'">
-        <NoWarn>7035;8603</NoWarn>
+        <NoWarn>
+            7035;
+            8600;
+            8603;
+        </NoWarn>
     </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    </ItemGroup>
 
 </Project>

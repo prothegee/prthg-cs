@@ -20,9 +20,9 @@ namespace prthgcs
         /// <code>
         /// return length will be 40
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        /// </summary>
         public string GenerateSHA1(string input)
         {
             var pInput = GenerateSHA1_CPPPORT(input);
@@ -42,9 +42,9 @@ namespace prthgcs
         /// <code>
         /// return length will be 56
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        /// </summary>
         public string GenerateSHA224(string input)
         {
             var pInput = GenerateSHA224_CPPPORT(input);
@@ -64,9 +64,9 @@ namespace prthgcs
         /// <code>
         /// return length will be 64
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        /// </summary>
         public string GenerateSHA256(string input)
         {
             var pInput = GenerateSHA256_CPPPORT(input);
@@ -86,9 +86,9 @@ namespace prthgcs
         /// <code>
         /// return length will be 96
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        /// </summary>
         public string GenerateSHA384(string input)
         {
             var pInput = GenerateSHA384_CPPPORT(input);
@@ -108,9 +108,9 @@ namespace prthgcs
         /// <code>
         /// return length will be 128
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        /// </summary>
         public string GenerateSHA512(string input)
         {
             var pInput = GenerateSHA512_CPPPORT(input);
@@ -130,9 +130,9 @@ namespace prthgcs
         /// <code>
         /// return length will be 128
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        /// </summary>
         public string GenerateBLAKE2b(string input)
         {
             var pInput = GenerateBLAKE2b_CPPPORT(input);
@@ -149,10 +149,10 @@ namespace prthgcs
         /// <code>
         /// STATUS: OK
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <param name="salt"></param>
         /// <returns></returns>
-        /// </summary>
         public string GenerateHasherSCRYPT(string input, string salt)
         {
             var pInput = GenerateHasherSCRYPT_CPPPORT(input, salt);
@@ -175,11 +175,11 @@ namespace prthgcs
         /// <code>
         /// initializeVector length must 24 byte e.g. abcdefghijklmnopqrstuvwx
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <param name="initializeKey"></param>
         /// <param name="initializeVector"></param>
         /// <returns></returns>
-        /// </summary>
         public string EncryptXChaCha20(string input, string initializeKey, string initializeVector)
         {
             var pInput = EncryptXChaCha20_CPPPORT(input, initializeKey, initializeVector);
@@ -202,11 +202,11 @@ namespace prthgcs
         /// <code>
         /// initializeVector length must 24 byte e.g. abcdefghijklmnopqrstuvwx
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <param name="initializeKey"></param>
         /// <param name="initializeVector"></param>
         /// <returns></returns>
-        /// </summary>
         public string DecryptXChaCha20(string input, string initializeKey, string initializeVector)
         {
             var pInput = DecryptXChaCha20_CPPPORT(input, initializeKey, initializeVector);
@@ -229,11 +229,11 @@ namespace prthgcs
         /// <code>
         /// initializeVector length must 9 byte and can't start from 0 e.g. 987654321
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <param name="initializeKey"></param>
         /// <param name="initializeVector"></param>
         /// <returns></returns>
-        /// </summary>
         public string EncryptAES(string input, int initializeKey, int initializeVector)
         {
             var pInput = EncryptAES_CPPPORT(input, initializeKey, initializeVector);
@@ -256,11 +256,11 @@ namespace prthgcs
         /// <code>
         /// initializeVector length must 9 byte and can't start from 0 e.g. 987654321
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <param name="initializeKey"></param>
         /// <param name="initializeVector"></param>
         /// <returns></returns>
-        /// </summary>
         public string DecryptAES(string input, int initializeKey, int initializeVector)
         {
             var pInput = DecryptAES_CPPPORT(input, initializeKey, initializeVector);
@@ -283,11 +283,11 @@ namespace prthgcs
         /// <code>
         /// initializeVector length must 16 byte and can't start from 0 e.g. 9876543219876543
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <param name="initializeKey"></param>
         /// <param name="initializeVector"></param>
         /// <returns></returns>
-        /// </summary>
         public string EncryptRC6(string input, long initializeKey, long initializeVector)
         {
             var pInput = EncryptRC6_CPPPORT(input, initializeKey, initializeVector);
@@ -310,11 +310,11 @@ namespace prthgcs
         /// <code>
         /// initializeVector length must 16 byte and can't start from 0 e.g. 9876543219876543
         /// </code>
+        /// </summary>
         /// <param name="input"></param>
         /// <param name="initializeKey"></param>
         /// <param name="initializeVector"></param>
         /// <returns></returns>
-        /// </summary>
         public string DecryptRC6(string input, long initializeKey, long initializeVector)
         {
             var pInput = DecryptRC6_CPPPORT(input, initializeKey, initializeVector);
