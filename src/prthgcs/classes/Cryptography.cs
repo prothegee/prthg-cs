@@ -175,6 +175,9 @@ namespace prthgcs
         /// <code>
         /// initializeVector length must 24 byte e.g. abcdefghijklmnopqrstuvwx
         /// </code>
+        /// <code>
+        /// considering use RC6 if you want asci/alphanumeric result rather than unicode
+        /// </code>
         /// </summary>
         /// <param name="input"></param>
         /// <param name="initializeKey"></param>
@@ -201,6 +204,9 @@ namespace prthgcs
         /// </code>
         /// <code>
         /// initializeVector length must 24 byte e.g. abcdefghijklmnopqrstuvwx
+        /// </code>
+        /// <code>
+        /// considering use RC6 if you want asci/alphanumeric result rather than unicode
         /// </code>
         /// </summary>
         /// <param name="input"></param>
@@ -229,6 +235,9 @@ namespace prthgcs
         /// <code>
         /// initializeVector length must 9 byte and can't start from 0 e.g. 987654321
         /// </code>
+        /// <code>
+        /// considering use RC6 if you want asci/alphanumeric result rather than unicode
+        /// </code>
         /// </summary>
         /// <param name="input"></param>
         /// <param name="initializeKey"></param>
@@ -255,6 +264,9 @@ namespace prthgcs
         /// </code>
         /// <code>
         /// initializeVector length must 9 byte and can't start from 0 e.g. 987654321
+        /// </code>
+        /// <code>
+        /// considering use RC6 if you want asci/alphanumeric result rather than unicode
         /// </code>
         /// </summary>
         /// <param name="input"></param>
