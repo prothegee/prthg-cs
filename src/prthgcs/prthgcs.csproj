@@ -11,11 +11,25 @@
         <PackageId>prthg.prthgcs</PackageId>
         <Authors>Prana Ron @prothegee</Authors>
         <Company>N/A</Company>
-        <PackageTags>utility, sha, blake2b, scrypt, xchacha20, rc6, hash, stream, cipher</PackageTags>
+        <PackageTags>utility;cryptography;hash;sha;blake2b;scrypt;stream;cipher;xchacha20;rc6</PackageTags>
         <RepositoryUrl>https://github.com/prothegee/prthg-cs</RepositoryUrl>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <IncludeSymbols>true</IncludeSymbols>
+        <copyright>Copyright © 2023 Prana Ron</copyright>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>
+            prthg-cs dotnet library
+
+            docs and repository: https://github.com/prothegee/prthg-cs
+        </Description>
+        <PackageIcon>prthg-cs-color-transparent.png</PackageIcon>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\LICENSE.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\docs\assets\prthg-cs-color-transparent.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
         <NoWarn>

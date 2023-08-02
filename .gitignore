@@ -42,3 +42,5 @@
 /yarn.lock
 
 /src/prthgcs/config.json
+/src/prthgcs/README.md
+/src/prthgcs/LICENSE.md
