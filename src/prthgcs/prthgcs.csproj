@@ -5,7 +5,7 @@
         <RootNamespace>prthgcs</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <ActualVersion>0.1.0.20230801</ActualVersion>
+        <ActualVersion>0.1.0.20230803</ActualVersion>
         <FileVersion>0.1.0</FileVersion>
         <Version>0.1.0</Version>
         <PackageId>prthg.prthgcs</PackageId>
@@ -14,6 +14,7 @@
         <PackageTags>utility, sha, blake2b, scrypt, xchacha20, rc6, hash, stream, cipher</PackageTags>
         <RepositoryUrl>https://github.com/prothegee/prthg-cs</RepositoryUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <IncludeSymbols>true</IncludeSymbols>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">

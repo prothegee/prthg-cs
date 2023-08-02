@@ -20,6 +20,6 @@ cp ./build/Release/cppport.* ./test/bin/Release/net7.0/;
 cp ./build/Release/cppport.* ./test/obj/Release/net6.0/;
 cp ./build/Release/cppport.* ./test/obj/Release/net7.0/;
 
-dotnet restore .;
+dotnet restore;
 dotnet build -c Debug;
 dotnet build -c Release;
