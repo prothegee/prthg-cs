@@ -12,7 +12,9 @@
         <Authors>Prana Ron @prothegee</Authors>
         <Company>N/A</Company>
         <PackageTags>utility;cryptography;hash;sha;blake2b;scrypt;stream;cipher;xchacha20;rc6</PackageTags>
+        <PackageProjectUrl>https://github.com/prothegee/prthg-cs</PackageProjectUrl>
         <RepositoryUrl>https://github.com/prothegee/prthg-cs</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <IncludeSymbols>true</IncludeSymbols>
         <copyright>Copyright © 2023 Prana Ron</copyright>
