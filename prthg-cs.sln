@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4676A275-1BE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prthgcs", "src\prthgcs\prthgcs.csproj", "{6E56C829-D9A2-40A2-8205-A81351E653A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{8F21EC6E-89CE-4A25-AE4D-D6EFEFF77857}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prthgcs.test", "src\prthgcs.test\prthgcs.test.csproj", "{17497C7D-7EA7-4D1A-A66E-1698357584B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,12 +22,13 @@ Global
 		{6E56C829-D9A2-40A2-8205-A81351E653A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E56C829-D9A2-40A2-8205-A81351E653A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E56C829-D9A2-40A2-8205-A81351E653A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F21EC6E-89CE-4A25-AE4D-D6EFEFF77857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F21EC6E-89CE-4A25-AE4D-D6EFEFF77857}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F21EC6E-89CE-4A25-AE4D-D6EFEFF77857}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F21EC6E-89CE-4A25-AE4D-D6EFEFF77857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17497C7D-7EA7-4D1A-A66E-1698357584B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17497C7D-7EA7-4D1A-A66E-1698357584B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17497C7D-7EA7-4D1A-A66E-1698357584B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17497C7D-7EA7-4D1A-A66E-1698357584B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6E56C829-D9A2-40A2-8205-A81351E653A6} = {4676A275-1BE7-4DAA-97F7-F0C5AB1654D3}
+		{17497C7D-7EA7-4D1A-A66E-1698357584B2} = {4676A275-1BE7-4DAA-97F7-F0C5AB1654D3}
 	EndGlobalSection
 EndGlobal
