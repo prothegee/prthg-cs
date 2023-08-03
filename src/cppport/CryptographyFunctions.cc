@@ -1,12 +1,12 @@
 #include "CryptographyFunctions.h"
 
 
-CPPPORT_EXPORT int Gen420()
+PRTHGCS_CPPPORT_EXPORT int Gen420()
 {
     return 420;
 }
 
-CPPPORT_EXPORT const char *GetInputParam(const char *input)
+PRTHGCS_CPPPORT_EXPORT const char *GetInputParam(const char *input)
 {
     std::string fInput(input);
     int length = fInput.length() + 1;
@@ -20,7 +20,7 @@ CPPPORT_EXPORT const char *GetInputParam(const char *input)
     return fResult;
 }
 
-CPPPORT_EXPORT const char *GenerateSHA1(const char *input)
+PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA1(const char *input)
 {
     std::string tInput(input), tResult;
 
@@ -45,7 +45,7 @@ CPPPORT_EXPORT const char *GenerateSHA1(const char *input)
     return fResult;
 }
 
-CPPPORT_EXPORT const char *GenerateSHA224(const char *input)
+PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA224(const char *input)
 {
     std::string tInput(input), tResult;
 
@@ -70,7 +70,7 @@ CPPPORT_EXPORT const char *GenerateSHA224(const char *input)
     return fResult;
 }
 
-CPPPORT_EXPORT const char *GenerateSHA256(const char *input)
+PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA256(const char *input)
 {
     std::string tInput(input), tResult;
 
@@ -95,7 +95,7 @@ CPPPORT_EXPORT const char *GenerateSHA256(const char *input)
     return fResult;
 }
 
-CPPPORT_EXPORT const char *GenerateSHA384(const char *input)
+PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA384(const char *input)
 {
     std::string tInput(input), tResult;
 
@@ -120,7 +120,7 @@ CPPPORT_EXPORT const char *GenerateSHA384(const char *input)
     return fResult;
 }
 
-CPPPORT_EXPORT const char *GenerateSHA512(const char *input)
+PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA512(const char *input)
 {
     std::string tInput(input), tResult;
 
@@ -145,7 +145,7 @@ CPPPORT_EXPORT const char *GenerateSHA512(const char *input)
     return fResult;
 }
 
-CPPPORT_EXPORT const char *GenerateBLAKE2b(const char *input)
+PRTHGCS_CPPPORT_EXPORT const char *GenerateBLAKE2b(const char *input)
 {
     std::string tInput(input), tResult;
 
@@ -170,7 +170,7 @@ CPPPORT_EXPORT const char *GenerateBLAKE2b(const char *input)
     return fResult;
 }
 
-CPPPORT_EXPORT const char *GenerateHasherSCRYPT(const char *input, const char *salt)
+PRTHGCS_CPPPORT_EXPORT const char *GenerateHasherSCRYPT(const char *input, const char *salt)
 {
     std::string tResult;
 
@@ -204,7 +204,7 @@ CPPPORT_EXPORT const char *GenerateHasherSCRYPT(const char *input, const char *s
     return fResult;
 }
 
-CPPPORT_EXPORT const char *EncryptXChaCha20(const char *input, const char *initializeKey, const char *initializeVector)
+PRTHGCS_CPPPORT_EXPORT const char *EncryptXChaCha20(const char *input, const char *initializeKey, const char *initializeVector)
 {
     std::string tResult;
     std::string _initializeKey(initializeKey), _initializeVector(initializeVector);
@@ -239,7 +239,7 @@ CPPPORT_EXPORT const char *EncryptXChaCha20(const char *input, const char *initi
     return fResult;
 }
 
-CPPPORT_EXPORT const char *DecryptXChaCha20(const char *input, const char *initializeKey, const char *initializeVector)
+PRTHGCS_CPPPORT_EXPORT const char *DecryptXChaCha20(const char *input, const char *initializeKey, const char *initializeVector)
 {
     std::string tResult;
     std::string _initializeKey(initializeKey), _initializeVector(initializeVector);
@@ -271,7 +271,7 @@ CPPPORT_EXPORT const char *DecryptXChaCha20(const char *input, const char *initi
     return fResult;
 }
 
-CPPPORT_EXPORT const char *EncryptAES(const char *input, int initializeKey, int initializeVector)
+PRTHGCS_CPPPORT_EXPORT const char *EncryptAES(const char *input, int initializeKey, int initializeVector)
 {
     std::string tInput(input), tResult;
 
@@ -296,7 +296,7 @@ CPPPORT_EXPORT const char *EncryptAES(const char *input, int initializeKey, int 
     return fResult;
 }
 
-CPPPORT_EXPORT const char *DecryptAES(const char *input, int initializeKey, int initializeVector)
+PRTHGCS_CPPPORT_EXPORT const char *DecryptAES(const char *input, int initializeKey, int initializeVector)
 {
     std::string tInput(input), tResult;
 
@@ -322,7 +322,7 @@ CPPPORT_EXPORT const char *DecryptAES(const char *input, int initializeKey, int 
     return fResult;
 }
 
-CPPPORT_EXPORT const char *EncryptRC6(const char *input, long initializeKey, long initializeVector)
+PRTHGCS_CPPPORT_EXPORT const char *EncryptRC6(const char *input, long initializeKey, long initializeVector)
 {
     std::string tInput(input), tResult, tResultOK;
 
@@ -351,7 +351,7 @@ CPPPORT_EXPORT const char *EncryptRC6(const char *input, long initializeKey, lon
     return fResult;
 }
 
-CPPPORT_EXPORT const char *DecryptRC6(const char *input, long initializeKey, long initializeVector)
+PRTHGCS_CPPPORT_EXPORT const char *DecryptRC6(const char *input, long initializeKey, long initializeVector)
 {
     std::string tInput(input), tResult, tResultOK;
 

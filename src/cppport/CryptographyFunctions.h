@@ -27,10 +27,10 @@
 extern "C"
 {
     // THIS IS TEST
-    CPPPORT_EXPORT int Gen420();
+    PRTHGCS_CPPPORT_EXPORT int Gen420();
 
     // THIS IS TEST
-    CPPPORT_EXPORT const char *GetInputParam(const char *input);
+    PRTHGCS_CPPPORT_EXPORT const char *GetInputParam(const char *input);
 
     /**
      * @brief generate sha1 from input
@@ -40,9 +40,9 @@ extern "C"
      * @note return length will be 40
      * 
      * @param input 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *GenerateSHA1(const char *input);
+    PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA1(const char *input);
 
     /**
      * @brief generate sha224 from input
@@ -52,9 +52,9 @@ extern "C"
      * @note return length will be 56
      * 
      * @param input 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *GenerateSHA224(const char *input);
+    PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA224(const char *input);
 
     /**
      * @brief generate sha256 from input
@@ -64,9 +64,9 @@ extern "C"
      * @note return length will be 64
      * 
      * @param input 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *GenerateSHA256(const char *input);
+    PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA256(const char *input);
 
     /**
      * @brief generate sha384 from input
@@ -76,9 +76,9 @@ extern "C"
      * @note return length will be 96
      * 
      * @param input 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *GenerateSHA384(const char *input);
+    PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA384(const char *input);
 
     /**
      * @brief generate sha512 from input
@@ -88,9 +88,9 @@ extern "C"
      * @note return length will be 128
      * 
      * @param input 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *GenerateSHA512(const char *input);
+    PRTHGCS_CPPPORT_EXPORT const char *GenerateSHA512(const char *input);
 
     /**
      * @brief generate blake2b from input
@@ -100,9 +100,9 @@ extern "C"
      * @note return length will be 128
      * 
      * @param input 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *GenerateBLAKE2b(const char *input);
+    PRTHGCS_CPPPORT_EXPORT const char *GenerateBLAKE2b(const char *input);
 
     /**
      * @brief generate password hasher using scrypt
@@ -110,9 +110,9 @@ extern "C"
      * @note STATUS: OK
      * 
      * @param input 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *GenerateHasherSCRYPT(const char *input, const char *salt);
+    PRTHGCS_CPPPORT_EXPORT const char *GenerateHasherSCRYPT(const char *input, const char *salt);
 
     /**
      * @brief encrypt input using XChaCha20 stream cipher
@@ -125,9 +125,9 @@ extern "C"
      * @param input 
      * @param initializeKey 
      * @param initializeVector 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *EncryptXChaCha20(const char *input, const char *initializeKey, const char *initializeVector);
+    PRTHGCS_CPPPORT_EXPORT const char *EncryptXChaCha20(const char *input, const char *initializeKey, const char *initializeVector);
 
     /**
      * @brief decrypt input using XChaCha20 stream cipher
@@ -140,9 +140,9 @@ extern "C"
      * @param input 
      * @param initializeVector 
      * @param initializeKey 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *DecryptXChaCha20(const char *input, const char *initializeKey, const char *initializeVector);
+    PRTHGCS_CPPPORT_EXPORT const char *DecryptXChaCha20(const char *input, const char *initializeKey, const char *initializeVector);
 
     /**
      * @brief encrypt input using CBC AES Rijndael stream cipher
@@ -155,9 +155,9 @@ extern "C"
      * @param input 
      * @param initializeKey 
      * @param initializeVector 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *EncryptAES(const char *input, int initializeKey, int initializeVector);
+    PRTHGCS_CPPPORT_EXPORT const char *EncryptAES(const char *input, int initializeKey, int initializeVector);
 
     /**
      * @brief decrypt input using CBC AES Rijndael stream cipher
@@ -170,9 +170,9 @@ extern "C"
      * @param input 
      * @param initializeKey 
      * @param initializeVector 
-     * @return CPPPORT_EXPORT const char* 
+     * @return PRTHGCS_CPPPORT_EXPORT const char* 
      */
-    CPPPORT_EXPORT const char *DecryptAES(const char *input, int initializeKey, int initializeVector);
+    PRTHGCS_CPPPORT_EXPORT const char *DecryptAES(const char *input, int initializeKey, int initializeVector);
 
     /**
      * @brief encrypt input using CBC R6 stream cipher
@@ -187,7 +187,7 @@ extern "C"
      * @param initializeVector 
      * @return std::string 
      */
-    CPPPORT_EXPORT const char *EncryptRC6(const char *input, long initializeKey, long initializeVector);
+    PRTHGCS_CPPPORT_EXPORT const char *EncryptRC6(const char *input, long initializeKey, long initializeVector);
 
     /**
      * @brief decrypt input using CBC R6 stream cipher
@@ -202,7 +202,7 @@ extern "C"
      * @param initializeVector 
      * @return std::string 
      */
-    CPPPORT_EXPORT const char *DecryptRC6(const char *input, long initializeKey, long initializeVector);
+    PRTHGCS_CPPPORT_EXPORT const char *DecryptRC6(const char *input, long initializeKey, long initializeVector);
 }
 
 

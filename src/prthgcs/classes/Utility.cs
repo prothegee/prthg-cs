@@ -1,3 +1,7 @@
+using System;
+using System.Text.RegularExpressions;
+
+
 namespace prthgcs
 {
     /// <summary>
@@ -5,7 +9,7 @@ namespace prthgcs
     /// </summary>
     public class CUtility
     {
-        private string m_alphanumeric;
+        private readonly string m_alphanumeric;
 
 
         public CUtility()
