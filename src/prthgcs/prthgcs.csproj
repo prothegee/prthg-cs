@@ -6,9 +6,9 @@
         <RootNamespace>prthgcs</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <ActualVersion>0.1.0.20230803</ActualVersion>
-        <FileVersion>0.1.0</FileVersion>
-        <Version>0.1.0</Version>
+        <ActualVersion>0.1.14.20230803</ActualVersion>
+        <FileVersion>0.1.14</FileVersion>
+        <Version>0.1.14</Version>
         <PackageId>prthg.prthgcs</PackageId>
         <Authors>Prana Ron @prothegee</Authors>
         <Company>N/A</Company>
@@ -63,14 +63,8 @@
         <None Include="..\..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\..\LICENSE.md" Pack="true" PackagePath="\" />
         <None Include="..\..\docs\assets\prthg-cs-color-transparent.png" Pack="true" PackagePath="\" />
-    </ItemGroup>
-
-    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-        <Content Include="lib\net6.0\*.dll" Pack="true" PackagePath="lib\net6.0\" />
-    </ItemGroup>
-
-    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
-        <Content Include="lib\net7.0\*.dll" Pack="true" PackagePath="lib\net7.0\" />
+        <Content Include="..\..\build\Release\**\*.dll" Pack="true" PackagePath="lib\net6.0\" />
+        <Content Include="..\..\build\Release\**\*.dll" Pack="true" PackagePath="lib\net7.0\" />
     </ItemGroup>
 
 
