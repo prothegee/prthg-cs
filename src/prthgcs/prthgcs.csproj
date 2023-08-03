@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+
     <PropertyGroup>
         <TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
         <RootNamespace>prthgcs</RootNamespace>
@@ -11,7 +12,7 @@
         <PackageId>prthg.prthgcs</PackageId>
         <Authors>Prana Ron @prothegee</Authors>
         <Company>N/A</Company>
-        <PackageTags>utility;cryptography;hash;sha;blake2b;scrypt;stream;cipher;xchacha20;rc6</PackageTags>
+        <PackageTags>utility;cryptography;hash;sha;blake2b;scrypt;stream;cipher;rc6</PackageTags>
         <PackageProjectUrl>https://github.com/prothegee/prthg-cs</PackageProjectUrl>
         <RepositoryUrl>https://github.com/prothegee/prthg-cs</RepositoryUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -19,19 +20,15 @@
         <IncludeSymbols>true</IncludeSymbols>
         <copyright>Copyright © 2023 Prana Ron</copyright>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
         <Description>
             prthg-cs dotnet library
 
             docs and repository: https://github.com/prothegee/prthg-cs
         </Description>
         <PackageIcon>prthg-cs-color-transparent.png</PackageIcon>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     </PropertyGroup>
-
-    <ItemGroup>
-        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-        <None Include="..\..\LICENSE.md" Pack="true" PackagePath="\" />
-        <None Include="..\..\docs\assets\prthg-cs-color-transparent.png" Pack="true" PackagePath="\" />
-    </ItemGroup>
 
     <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
         <NoWarn>
@@ -48,5 +45,33 @@
             8603;
         </NoWarn>
     </PropertyGroup>
+
+    <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+        <DefineConstants>__IS_WINDOWS__</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+        <DefineConstants>__IS_LINUX__</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+        <DefineConstants>__IS_MACOS__</DefineConstants>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\LICENSE.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\docs\assets\prthg-cs-color-transparent.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <Content Include="lib\net6.0\*.dll" Pack="true" PackagePath="lib\net6.0\" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+        <Content Include="lib\net7.0\*.dll" Pack="true" PackagePath="lib\net7.0\" />
+    </ItemGroup>
+
 
 </Project>

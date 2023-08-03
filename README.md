@@ -16,6 +16,8 @@
 - status:
     - internal/dev as submodule
 
+<!-- - [nuget package](https://www.nuget.org/packages/prthg.prthgcs) -->
+
 - [license](./LICENSE.md)
 
 - [changelog](./CHANGELOG.md)

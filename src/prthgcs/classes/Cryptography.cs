@@ -1,3 +1,8 @@
+using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
+
+
 namespace prthgcs
 {
     /// <summary>
@@ -5,17 +10,13 @@ namespace prthgcs
     /// </summary>
     public class CCryptography
     {
-        public CCryptography()
-        {
-        }
-
-        [DllImport("cppport.dll", EntryPoint = "GenerateSHA1", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "GenerateSHA1", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr GenerateSHA1_CPPPORT(string input);
 
         /// <summary>
         /// generate sha1 from input
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// <code>
         /// return length will be 40
@@ -31,13 +32,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "GenerateSHA224", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "GenerateSHA224", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr GenerateSHA224_CPPPORT(string input);
 
         /// <summary>
         /// generate sha224 from input
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// <code>
         /// return length will be 56
@@ -53,13 +54,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "GenerateSHA256", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "GenerateSHA256", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr GenerateSHA256_CPPPORT(string input);
 
         /// <summary>
         /// generate sha256 from input
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// <code>
         /// return length will be 64
@@ -75,13 +76,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "GenerateSHA384", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "GenerateSHA384", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr GenerateSHA384_CPPPORT(string input);
 
         /// <summary>
         /// generate sha384 from input
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// <code>
         /// return length will be 96
@@ -97,13 +98,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "GenerateSHA512", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "GenerateSHA512", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr GenerateSHA512_CPPPORT(string input);
 
         /// <summary>
         /// generate sha512 from input
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// <code>
         /// return length will be 128
@@ -119,13 +120,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "GenerateBLAKE2b", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "GenerateBLAKE2b", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr GenerateBLAKE2b_CPPPORT(string input);
 
         /// <summary>
         /// generate blake2b from input
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// <code>
         /// return length will be 128
@@ -141,13 +142,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "GenerateHasherSCRYPT", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "GenerateHasherSCRYPT", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr GenerateHasherSCRYPT_CPPPORT(string input, string salt);
 
         /// <summary>
         /// generate password hasher using scrypt
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// </summary>
         /// <param name="input"></param>
@@ -161,13 +162,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "EncryptXChaCha20", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "EncryptXChaCha20", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr EncryptXChaCha20_CPPPORT(string input, string initializeKey, string initializeVector);
 
         /// <summary>
         /// encrypt input using XChaCha20 stream cipher
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// <code>
         /// initializeKey length must 32 byte e.g. abcdefghijklmnopqrstuvwxyz123456
@@ -191,13 +192,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "DecryptXChaCha20", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "DecryptXChaCha20", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr DecryptXChaCha20_CPPPORT(string input, string initializeKey, string initializeVector);
 
         /// <summary>
         /// decrypt input using XChaCha20 stream cipher
         /// <code>
-        /// STATUS: OK
+        /// STATUS: FAIL TO DERYPT
         /// </code>
         /// <code>
         /// initializeKey length must 32 byte e.g. abcdefghijklmnopqrstuvwxyz123456
@@ -221,13 +222,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "EncryptAES", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "EncryptAES", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr EncryptAES_CPPPORT(string input, int initializeKey, int initializeVector);
 
         /// <summary>
         /// encrypt input using CBC AES Rijndael stream cipher
         /// <code>
-        /// STATUS: OK
+        /// STATUS: EXCEPTION SEHException
         /// </code>
         /// <code>
         /// initializeKey length must 9 byte and can't start from 0 e.g. 123456789
@@ -251,13 +252,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "DecryptAES", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "DecryptAES", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr DecryptAES_CPPPORT(string input, int initializeKey, int initializeVector);
 
         /// <summary>
         /// decrypt input using CBC AES Rijndael stream cipher
         /// <code>
-        /// STATUS: ERROR when decrypt input
+        /// STATUS: EXCEPTION SEHException
         /// </code>
         /// <code>
         /// initializeKey length must 9 byte and can't start from 0 e.g. 123456789
@@ -281,13 +282,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "EncryptRC6", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "EncryptRC6", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr EncryptRC6_CPPPORT(string input, long initializeKey, long initializeVector);
 
         /// <summary>
         /// encrypt encrypt input using CBC R6 stream cipher
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// <code>
         /// initializeKey length must 16 byte and can't start from 0 e.g. 1234567891234567
@@ -308,13 +309,13 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("cppport.dll", EntryPoint = "DecryptRC6", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "DecryptRC6", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr DecryptRC6_CPPPORT(string input, long initializeKey, long initializeVector);
 
         /// <summary>
         /// encrypt decrypt input using CBC R6 stream cipher
         /// <code>
-        /// STATUS: OK
+        /// STATUS: PASSED
         /// </code>
         /// <code>
         /// initializeKey length must 16 byte and can't start from 0 e.g. 1234567891234567

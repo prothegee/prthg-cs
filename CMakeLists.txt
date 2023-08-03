@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(cppport LANGUAGES CXX)
+project(prthgcs-cppport LANGUAGES CXX)
 
 
 # ########################################################################
