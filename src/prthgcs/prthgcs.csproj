@@ -6,7 +6,7 @@
         <RootNamespace>prthgcs</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <ActualVersion>0.1.14.20230803</ActualVersion>
+        <ActualVersion>0.1.14.20230804</ActualVersion>
         <FileVersion>0.1.14</FileVersion>
         <Version>0.1.14</Version>
         <PackageId>prthg.prthgcs</PackageId>
