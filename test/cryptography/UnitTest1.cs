@@ -2,7 +2,7 @@ using Xunit;
 using prthgcs;
 
 
-namespace prthgcs.test;
+namespace test.cryptography;
 
 
 public class UnitTest1

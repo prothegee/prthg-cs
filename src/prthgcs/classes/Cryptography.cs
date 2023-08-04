@@ -162,7 +162,7 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("prthgcs-cppport", EntryPoint = "EncryptXChaCha20", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "EncryptXChaCha20", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr EncryptXChaCha20_CPPPORT(string input, string initializeKey, string initializeVector);
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("prthgcs-cppport", EntryPoint = "DecryptXChaCha20", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "DecryptXChaCha20", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr DecryptXChaCha20_CPPPORT(string input, string initializeKey, string initializeVector);
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("prthgcs-cppport", EntryPoint = "EncryptAES", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "EncryptAES", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr EncryptAES_CPPPORT(string input, int initializeKey, int initializeVector);
 
         /// <summary>
@@ -252,7 +252,7 @@ namespace prthgcs
             return pInputMarshal;
         }
 
-        [DllImport("prthgcs-cppport", EntryPoint = "DecryptAES", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("prthgcs-cppport", EntryPoint = "DecryptAES", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr DecryptAES_CPPPORT(string input, int initializeKey, int initializeVector);
 
         /// <summary>
