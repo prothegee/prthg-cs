@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\prthgcs\prthgcs.csproj" />
+    <ProjectReference Include="..\..\src\prthgcs\prthgcs.csproj" />
   </ItemGroup>
 
 </Project>
